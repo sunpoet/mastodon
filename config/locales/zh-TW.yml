@@ -29,6 +29,7 @@ zh-TW:
     terms: 使用條款
     user_count_after: 位註冊使用者
     user_count_before: 這裡共有
+    version: 版本
   accounts:
     follow: 關注
     followers: 關注者
@@ -39,9 +40,18 @@ zh-TW:
     posts: 文章
     remote_follow: 跨站關注
     unfollow: 取消關注
+  activitypub:
+    activity:
+      announce:
+        name: "%{account_name} 分享了一個活動。"
+      create:
+        name: "%{account_name} 新增了一篇筆記。"
   admin:
     accounts:
       are_you_sure: 您確定嗎?
+      confirm: 確認
+      confirmed: 已確認
+      disable_two_factor_authentication: 取消雙因子認證（2FA）
       display_name: 顯示名稱
       domain: 網域
       edit: 編輯
@@ -49,6 +59,7 @@ zh-TW:
       feed_url: Feed URL
       followers: 追蹤者
       follows: 追蹤的
+      ip: IP 位址
       location:
         all: 全部
         local: 本地
@@ -71,16 +82,25 @@ zh-TW:
       profile_url: 個人檔案網址
       public: 公開
       push_subscription_expires: PuSH 訂閱逾期
+      reset: 重置
+      reset_password: 重置密碼
       salmon_url: Salmon URL
+      search: 搜尋
+      show:
+        created_reports: 此帳戶建立之檢舉
+        report: 檢舉
+        targeted_reports: 對此帳戶之檢舉
       silence: 靜音
       statuses: 狀態
       title: 帳號
       undo_silenced: 取消靜音
       undo_suspension: 取消停權
       username: 使用者名稱
-      web: Web
+      web: 個人頁面
     domain_blocks:
       add_new: 新增
+      created_msg: 正在處理網域封鎖
+      destroyed_msg: 網域封鎖已取消
       domain: 網域
       new:
         create: 新增封鎖
@@ -90,7 +110,7 @@ zh-TW:
           silence: 靜音
           suspend: 停權
         title: 新封鎖網域
-      severity: 嚴重度
+      severity: 嚴重程度
       title: 網域封鎖
     pubsubhubbub:
       callback_url: Callback URL
@@ -107,6 +127,7 @@ zh-TW:
       id: ID
       mark_as_resolved: 標記為已解決
       report: '檢舉 #%{id}'
+      report_contents: 檢舉內容
       reported_account: 被檢舉帳號
       reported_by: 檢舉人
       resolved: 已解決
@@ -176,15 +197,18 @@ zh-TW:
       x_months: "%{count}個月"
       x_seconds: "%{count}秒"
   errors:
+    '403': 您沒有權限觀看這個網頁。
     '404': 您所尋找的網頁不存在。
     '410': 您所尋找的網頁已不存在。
     '422':
       content: 安全驗證失敗。請確定有開啟瀏覽器 Cookies 功能。
       title: 安全驗證失敗
+    '429': 服務器過忙
   exports:
     blocks: 您封鎖的使用者
     csv: CSV
     follows: 您關注的使用者
+    mutes: 您所靜音的用戶
     storage: 儲存空間大小
   generic:
     changes_saved_msg: 已成功儲存修改
@@ -245,6 +269,7 @@ zh-TW:
     back: 回到 Mastodon
     edit_profile: 修改個人資料
     export: 匯出
+    followers: 已授權追蹤者
     import: 匯入
     preferences: 偏好設定
     settings: 設定
@@ -255,23 +280,30 @@ zh-TW:
     show_more: 顯示更多
     visibilities:
       private: 只有關注您的人能看
+      private_long: Only show to followers
       public: 公開
-      unlisted: 公開，但不在公共時間軸顯示
+      public_long: 所有人都能看
+      unlisted: 不公開
+      unlisted_long: 公開可見，但不在公共時間軸顯示
   stream_entries:
     click_to_show: 點選顯示
     reblogged: 轉推
     sensitive_content: 敏感內容
   time:
     formats:
-      default: "%Y年%-m月%d日 %H:%M"
+      default: "%Y 年 %-m 月 %d 日 %H:%M"
   two_factor_authentication:
     code_hint: 請輸入您認證器產生的代碼，以進行認證
     description_html: 當您啟用<strong>雙因子認證</strong>後，您登入時將需要使您手機、或其他種類認證器產生的代碼。
     disable: 停用
     enable: 啟用
     enabled_success: 已成功啟用雙因子認證
+    generate_recovery_codes: 產生備用驗證碼
     instructions_html: <strong>請用您手機的認證器應用程式（如 Google Authenticator、Authy），掃描這裡的 QR 圖形碼</strong>。在雙因子認證啟用後，您登入時將須要使用此應用程式產生的認證碼。
+    lost_recovery_codes: 若您遺失手機，可以使用備用驗證碼登入，若您遺失了備用驗證碼，可重新產生，舊的備用驗證碼將會失效。
     manual_instructions: 如果您無法掃描 QR 圖形碼，請手動輸入︰
+    recovery_codes_regenerated: 已成功產生新的備用驗證碼
+    recovery_instructions: 若您遺失手機，您可以使用備用驗證碼登入。請收妥備用認證碼，例如列印並與其他重要文件一起存放。
     setup: 設定
     wrong_code: 您輸入的認證碼並不正確！可能伺服器時間和您手機不一致，請檢查您手機的時間，或與本站管理員聯絡。
   users:
